@@ -1,9 +1,9 @@
 const pokemonName = document.querySelector('.pokemon__name');
 const pokemonNumber = document.querySelector('.pokemon__number');
 const pokemonImage = document.querySelector('.pokemon__image');
-
 const form = document.querySelector('.form');
-const input = document.querySelector('.input__search');
+const RegExName = /\s/g  //RegEx for ignoring whitespaces on input
+const input = document.querySelector('.input__search')
 const buttonPrev = document.querySelector('.btn-prev');
 const buttonNext = document.querySelector('.btn-next');
 
@@ -20,7 +20,7 @@ const fetchPokemon = async (pokemon) => {
 
 const renderPokemon = async (pokemon) => {
 
-  pokemonName.innerHTML = 'Loanding...';
+  pokemonName.innerHTML = 'Loading...';
   pokemonNumber.innerHTML = '';
   pokemonImage.style.display = 'block';
 
@@ -29,8 +29,14 @@ const renderPokemon = async (pokemon) => {
   if (data) {
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
-    pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     searchPokemon = data.id;
+    if (data.id < 650){
+      pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
+    }
+    else {
+      //add static pictures while i`m searching for gifs api
+      pokemonImage.src = data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_default'];
+    }
   } else {
     pokemonName.innerHTML = 'Not found :c';
     pokemonNumber.innerHTML = '';
@@ -40,7 +46,9 @@ const renderPokemon = async (pokemon) => {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  renderPokemon(input.value.toLowerCase());
+  
+  
+  renderPokemon(input.value.toLowerCase().replace(RegExName, ''));  // IGNORE WHITESPACES
 
   input.value = '';
 });
