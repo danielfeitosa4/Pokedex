@@ -3,7 +3,9 @@ const pokemonNumber = document.querySelector('.pokemon__number');
 const pokemonImage = document.querySelector('.pokemon__image');
 const form = document.querySelector('.form');
 const RegExName = /\s/g  //RegEx for ignoring whitespaces on input
-const input = document.querySelector('.input__search')
+const input = document.querySelector('.input__search');
+const type1 = document.querySelector('.type1')
+const type2 = document.querySelector('.type2')
 const buttonPrev = document.querySelector('.btn-prev');
 const buttonNext = document.querySelector('.btn-next');
 
