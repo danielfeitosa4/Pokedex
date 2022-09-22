@@ -66,12 +66,12 @@ main {
   box-shadow: -3px 4px 0 #888, -5px 7px 0 #333
 }
 .types {
-  gap: 80px;
+  gap: 130px;
   position: absolute;
   bottom: 10%;
   left: 50%;
   height: 5%;
-  transform: translate(-70%, -220%);
+  transform: translate(-60%, -220%);
   display: flex;
 }
 
