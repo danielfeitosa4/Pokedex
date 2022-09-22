@@ -32,8 +32,6 @@ const renderPokemon = async (pokemon) => {
   const data = await fetchPokemon(pokemon);
   
   if (data) {
-    pokemonName.innerHTML = data.name;
-    pokemonNumber.innerHTML = data.id;
     searchPokemon = data.id;
     if (data.id < 650){
       pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
@@ -42,6 +40,8 @@ const renderPokemon = async (pokemon) => {
       //add static pictures while i`m searching for gifs api
       pokemonImage.src = data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_default'];
     }
+    pokemonName.innerHTML = data.name;
+    pokemonNumber.innerHTML = data.id;
     type1Name = data["types"][0]["type"]["name"]
     type1.src = "./images/typesImg/"+type1Name+".svg"
     icon1.className += ` ${type1Name}`;
