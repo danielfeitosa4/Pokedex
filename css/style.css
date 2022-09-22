@@ -13,16 +13,38 @@ body {
   min-height: 100vh;
 }
 
-main {
+main{
   display: inline-block;
+}
+
+main .topwindow {
+  
   margin-top: 2%;
   padding: 15px;
   position: relative;
 }
 
+main .bottomwindow{
+  margin-top: 2%;
+  padding: 15px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
 .pokedex {
   width: 100%;
   max-width: 425px;
+  display: block;
+}
+.pokedex2 {
+  width: 100%;
+  max-width: 425px;
+  border-radius: 30px;
+  display: block;
+ 
+}
+h1{
+  position: absolute;
 }
 
 .pokemon__image {
@@ -66,12 +88,11 @@ main {
   box-shadow: -3px 4px 0 #888, -5px 7px 0 #333
 }
 .types {
-  gap: 130px;
+  gap: 30px;
   position: absolute;
   bottom: 10%;
   left: 50%;
-  height: 5%;
-  transform: translate(-60%, -220%);
+  transform: translate(-67%, -110%);
   display: flex;
 }
 
@@ -107,6 +128,8 @@ main {
   box-shadow: inset -4px 4px 0 #222;
   font-size: 0.9rem;
 }
+
+
 
 
 /* COLORS FOR TYPES */
