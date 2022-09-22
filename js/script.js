@@ -40,8 +40,6 @@ const renderPokemon = async (pokemon) => {
       //add static pictures while i`m searching for gifs api
       pokemonImage.src = data['sprites']['versions']['generation-vii']['ultra-sun-ultra-moon']['front_default'];
     }
-    pokemonName.innerHTML = data.name;
-    pokemonNumber.innerHTML = data.id;
     type1Name = data["types"][0]["type"]["name"]
     type1.src = "./images/typesImg/"+type1Name+".svg"
     icon1.className += ` ${type1Name}`;
@@ -54,6 +52,8 @@ const renderPokemon = async (pokemon) => {
     else{
       type2.style.visibility = "hidden";
     }
+    pokemonName.innerHTML = data.name;
+    pokemonNumber.innerHTML = data.id;
 
   } else {
     pokemonName.innerHTML = 'Not found :c';
