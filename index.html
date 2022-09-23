@@ -11,28 +11,31 @@
 
   <!-- Main JS-->
   <script defer src="./js/script.js"></script>
+  <script src="./js/pokeParse.js"></script>
 
   <title>Pokédex</title>
 </head>
 <body>
   
   <main>
-    <img src="#" alt="pokemon" class="pokemon__image">
+    <div class="topwindow">
 
-    <h1 class="pokemon__data">
-      <span class="pokemon__number"></span> -
-      <span class="pokemon__name"></span>
-    </h1>
-
-    <form class="form">
-      <input 
+      <img src="#" alt="pokemon" class="pokemon__image">
+      
+      <h1 class="pokemon__data">
+        <span class="pokemon__number"></span> -
+        <span class="pokemon__name"></span>
+      </h1>
+      
+      <form class="form">
+        <input 
       type="search"
       class="input__search"
       placeholder="Name or Number"
       required
       />
     </form>
-
+    
     <div class="types">
       <div class="icon1">
         <img class="type type1">
@@ -45,10 +48,16 @@
       <button class="button btn-prev">&lt; Prev</button>
       <button class="button btn-next">Next &gt;</button>
     </div>
-
-
     <img src="./images/pokedex.png" class="pokedex" alt="pokedex">
-  </main>
-
+  </div>
+  <div class="bottomwindow">
+    <div class="weakness">
+      <h1>test</h1>
+      <img src="./images/pokedex2.png" class="pokedex2" alt="">
+    </div>
+  </div>
+  
+  
+</main>
 </body>
 </html>

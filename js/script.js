@@ -1,3 +1,4 @@
+
 const pokemonName = document.querySelector('.pokemon__name');
 const pokemonNumber = document.querySelector('.pokemon__number');
 const pokemonImage = document.querySelector('.pokemon__image');
@@ -29,6 +30,12 @@ const renderPokemon = async (pokemon) => {
   pokemonImage.style.display = 'block';
   icon1.className = "icon1";
   icon2.className = "icon2";
+  console.clear()
+  let weak2x = []
+  let weak4x = []
+  let normal = []
+  let strong05x = []
+  let strong025x = []
   const data = await fetchPokemon(pokemon);
   
   if (data) {
@@ -54,6 +61,32 @@ const renderPokemon = async (pokemon) => {
     }
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
+
+    
+    for(let i=33; i < 51; i++){
+		if(pokemonData[searchPokemon][i] == "0.25"){
+			strong025x.push(pokemonData[0][i].slice(8,)) 
+		}
+		else if(pokemonData[searchPokemon][i] == "0.5"){
+			strong05x.push(pokemonData[0][i].slice(8,)) 
+		}
+		else if(pokemonData[searchPokemon][i] == "1"){
+			normal.push(pokemonData[0][i].slice(8,)) 
+		}
+		else if(pokemonData[searchPokemon][i] == "2"){
+			weak2x.push(pokemonData[0][i].slice(8,)) 
+		}
+		else if(pokemonData[searchPokemon][i] == "4"){
+			weak4x.push(pokemonData[0][i].slice(8,)) 
+		}
+
+	}
+  console.log("Reiste 0.25x a ", strong025x) 
+  console.log("Reiste 0.5x a ", strong05x) 
+  console.log("Dano normal 1x a ", normal) 
+  console.log("Fraco 2x a ", weak2x) 
+  console.log("Fraco 4x a ", weak4x) 
+
 
   } else {
     pokemonName.innerHTML = 'Not found :c';
