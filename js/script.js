@@ -31,6 +31,8 @@ const renderPokemon = async (pokemon) => {
   icon1.className = "icon1";
   icon2.className = "icon2";
   console.clear()
+  let name = []
+  let imune = []
   let weak2x = []
   let weak4x = []
   let normal = []
@@ -64,7 +66,10 @@ const renderPokemon = async (pokemon) => {
 
     
     for(let i=33; i < 51; i++){
-		if(pokemonData[searchPokemon][i] == "0.25"){
+    if(pokemonData[searchPokemon][i] == "0"){
+        imune.push(pokemonData[0][i].slice(8,)) 
+      }
+		else if(pokemonData[searchPokemon][i] == "0.25"){
 			strong025x.push(pokemonData[0][i].slice(8,)) 
 		}
 		else if(pokemonData[searchPokemon][i] == "0.5"){
@@ -79,8 +84,13 @@ const renderPokemon = async (pokemon) => {
 		else if(pokemonData[searchPokemon][i] == "4"){
 			weak4x.push(pokemonData[0][i].slice(8,)) 
 		}
+    else if(pokemonData[searchPokemon][2] == "0.25"){
+			strong025x.push(pokemonData[0][i].slice(8,)) 
+		}
 
 	}
+  console.log(pokemonData[searchPokemon][2])
+  console.log("Imune 0x a ", imune)
   console.log("Reiste 0.25x a ", strong025x) 
   console.log("Reiste 0.5x a ", strong05x) 
   console.log("Dano normal 1x a ", normal) 
