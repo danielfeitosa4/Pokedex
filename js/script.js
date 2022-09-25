@@ -31,13 +31,12 @@ const renderPokemon = async (pokemon) => {
   icon1.className = "icon1";
   icon2.className = "icon2";
   console.clear()
-  let name = []
-  let imune = []
-  let weak2x = []
-  let weak4x = []
-  let normal = []
-  let strong05x = []
-  let strong025x = []
+  const imune = []
+  const strong025x = []
+  const strong05x = []
+  var normal = []
+  const weak2x = []
+  const weak4x = []
   const data = await fetchPokemon(pokemon);
   
   if (data) {
@@ -64,7 +63,7 @@ const renderPokemon = async (pokemon) => {
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
 
-    
+  ////////////// TYPE WEAKNESS ///////////////////////
     for(let i=33; i < 51; i++){
     if(pokemonData[searchPokemon][i] == "0"){
         imune.push(pokemonData[0][i].slice(8,)) 
@@ -84,16 +83,32 @@ const renderPokemon = async (pokemon) => {
 		else if(pokemonData[searchPokemon][i] == "4"){
 			weak4x.push(pokemonData[0][i].slice(8,)) 
 		}
-    else if(pokemonData[searchPokemon][2] == "0.25"){
-			strong025x.push(pokemonData[0][i].slice(8,)) 
-		}
-
+  
+  
 	}
+
+  function imgWeakness(arr){
+    // if (arr[0]){
+      const weaknessString = window["normal"].id
+    //   document.getElementById(weaknessString).style.visibility = "visible";
+    //   for(let i=0; i<arr.length; i++){
+    //     let img = document.createElement("img")
+    //     img.src="./images/typesImg/"+arr[i]+".svg"
+    //     img.id = (weaknessString)
+    //    const weakness=  document.getElementById(weaknessString)
+    //    weakness.appendChild(img)
+    //   }
+    // }
+    // else{
+    //   document.getElementById(weaknessString).style.visibility = "hidden";
+    // }
+    console.log(weaknessString)
+  }
   console.log(pokemonData[searchPokemon][2])
-  console.log("Imune 0x a ", imune)
+  console.log("Imune 0x ", imune) 
   console.log("Reiste 0.25x a ", strong025x) 
   console.log("Reiste 0.5x a ", strong05x) 
-  console.log("Dano normal 1x a ", normal) 
+  imgWeakness(normal) 
   console.log("Fraco 2x a ", weak2x) 
   console.log("Fraco 4x a ", weak4x) 
 
