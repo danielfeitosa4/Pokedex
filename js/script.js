@@ -34,7 +34,7 @@ const renderPokemon = async (pokemon) => {
   const imune = []
   const strong025x = []
   const strong05x = []
-  var normal = []
+  const normal = []
   const weak2x = []
   const weak4x = []
   const data = await fetchPokemon(pokemon);
@@ -89,7 +89,7 @@ const renderPokemon = async (pokemon) => {
 
   function imgWeakness(arr){
     // if (arr[0]){
-      const weaknessString = window["normal"].id
+      const weaknessString = Object.keys({arr})
     //   document.getElementById(weaknessString).style.visibility = "visible";
     //   for(let i=0; i<arr.length; i++){
     //     let img = document.createElement("img")
@@ -98,17 +98,20 @@ const renderPokemon = async (pokemon) => {
     //    const weakness=  document.getElementById(weaknessString)
     //    weakness.appendChild(img)
     //   }
-    // }
+    console.log(weaknessString)
+    }
     // else{
     //   document.getElementById(weaknessString).style.visibility = "hidden";
     // }
-    console.log(weaknessString)
-  }
+  // }
+  const [imuneStr] = Object.keys({imune})
   console.log(pokemonData[searchPokemon][2])
-  console.log("Imune 0x ", imune) 
+  console.log("Imune 0x ", imuneStr) 
   console.log("Reiste 0.25x a ", strong025x) 
   console.log("Reiste 0.5x a ", strong05x) 
+  console.log("Dano normal 1x ", normal) 
   imgWeakness(normal) 
+  imgWeakness(strong025x) 
   console.log("Fraco 2x a ", weak2x) 
   console.log("Fraco 4x a ", weak4x) 
 
