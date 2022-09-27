@@ -46,6 +46,16 @@ main .bottomwindow{
 h1{
   position: absolute;
 }
+.weakness{
+  position: relative;
+  display: block;
+  height: 10px;
+}
+
+.weakness img{
+  position: absolute;
+  height: 100px;
+}
 
 .pokemon__image {
   position: absolute;
