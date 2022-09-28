@@ -31,12 +31,28 @@ const renderPokemon = async (pokemon) => {
   icon1.className = "icon1";
   icon2.className = "icon2";
   console.clear()
-  let weak2x = []
-  let weak4x = []
-  let normal = []
-  let strong05x = []
-  let strong025x = []
-  const data = await fetchPokemon(pokemon);
+  const imune = ["imune"]
+  const strong025x = ["strong025x"]
+  const strong05x = ["strong05x"]
+  const normal = ["normal"]
+  const weak2x = ["weak2x"]
+  const weak4x = ["weak4x"]
+
+//////////// remove img divs for weakness types /////////////////
+  function typeConst(ConstType){
+  const myNode = document.getElementById(ConstType);
+  while (myNode.firstChild) {
+    myNode.replaceChildren();
+  }
+}
+  typeConst(imune)
+  typeConst(strong025x)
+  typeConst(strong05x)
+  typeConst(normal)
+  typeConst(weak2x)
+  typeConst(weak4x)
+
+const data = await fetchPokemon(pokemon);
   
   if (data) {
     searchPokemon = data.id;
@@ -62,9 +78,12 @@ const renderPokemon = async (pokemon) => {
     pokemonName.innerHTML = data.name;
     pokemonNumber.innerHTML = data.id;
 
-    
+  ////////////// TYPE WEAKNESS    OBJECT IN pokePARSE.js///////////////////////
     for(let i=33; i < 51; i++){
-		if(pokemonData[searchPokemon][i] == "0.25"){
+    if(pokemonData[searchPokemon][i] == "0"){
+        imune.push(pokemonData[0][i].slice(8,)) 
+      }
+		else if(pokemonData[searchPokemon][i] == "0.25"){
 			strong025x.push(pokemonData[0][i].slice(8,)) 
 		}
 		else if(pokemonData[searchPokemon][i] == "0.5"){
@@ -79,13 +98,38 @@ const renderPokemon = async (pokemon) => {
 		else if(pokemonData[searchPokemon][i] == "4"){
 			weak4x.push(pokemonData[0][i].slice(8,)) 
 		}
-
+  
+  
 	}
-  console.log("Reiste 0.25x a ", strong025x) 
-  console.log("Reiste 0.5x a ", strong05x) 
-  console.log("Dano normal 1x a ", normal) 
-  console.log("Fraco 2x a ", weak2x) 
-  console.log("Fraco 4x a ", weak4x) 
+////////////////puts img files in html ///////////////
+  function imgWeakness(arr){
+    const weaknessString = arr[0]
+    if (arr.length > 1 ){
+    for(let i=1; i<arr.length; i++){
+        document.getElementById(weaknessString).style.visibility = "visible";
+        document.getElementById(weaknessString).style.position = "static";
+       const img = document.createElement("img")
+        img.src="./images/typesImg/"+arr[i]+".svg"
+        img.className = (arr[i])
+      const weakness=  document.getElementById(weaknessString)
+      weakness.appendChild(img)
+    }
+     
+    }
+    else{
+      document.getElementById(weaknessString).style.visibility = "hidden";
+      document.getElementById(weaknessString).style.position = "absolute";
+
+    }
+  }
+  console.log(pokemonData[searchPokemon][2])
+
+  imgWeakness(imune)
+  imgWeakness(strong025x) 
+  imgWeakness(strong05x) 
+  imgWeakness(normal) 
+  imgWeakness(weak2x) 
+  imgWeakness(weak4x) 
 
 
   } else {
