@@ -107,6 +107,7 @@ const data = await fetchPokemon(pokemon);
     if (arr.length > 1 ){
     for(let i=1; i<arr.length; i++){
         document.getElementById(weaknessString).style.visibility = "visible";
+        document.getElementById(weaknessString).style.position = "static";
        const img = document.createElement("img")
         img.src="./images/typesImg/"+arr[i]+".svg"
         img.className = (arr[i])
@@ -117,6 +118,8 @@ const data = await fetchPokemon(pokemon);
     }
     else{
       document.getElementById(weaknessString).style.visibility = "hidden";
+      document.getElementById(weaknessString).style.position = "absolute";
+
     }
   }
   console.log(pokemonData[searchPokemon][2])

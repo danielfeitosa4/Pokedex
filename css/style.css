@@ -25,6 +25,8 @@ main .topwindow {
 }
 
 main .bottomwindow{
+  position: fixed;
+  height: 100px;
   margin-top: 2%;
   padding: 15px;
   margin-top: 0;
@@ -37,10 +39,12 @@ main .bottomwindow{
   display: block;
 }
 .pokedex2 {
+  display: block;
+  height: 1000px;
   width: 100%;
   max-width: 425px;
   border-radius: 30px;
-  display: block;
+  position: relative;
  
 }
 h1{
