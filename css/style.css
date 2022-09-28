@@ -15,6 +15,7 @@ body {
 
 main{
   display: inline-block;
+  
 }
 
 main .topwindow {
@@ -25,8 +26,9 @@ main .topwindow {
 }
 
 main .bottomwindow{
-  position: fixed;
-  height: 100px;
+  display: flexbox;
+  position: relative;
+  height: ;
   margin-top: 2%;
   padding: 15px;
   margin-top: 0;
@@ -40,11 +42,10 @@ main .bottomwindow{
 }
 .pokedex2 {
   display: block;
-  height: 1000px;
   width: 100%;
-  max-width: 425px;
+  /* max-width: 425px; */
   border-radius: 30px;
-  position: relative;
+  /* position: ; */
  
 }
 h1{
@@ -114,6 +115,16 @@ h1{
   height: 130%;
   padding: 4%;
   
+}
+
+.typeWeakness{
+  display: inline-block;
+  width: 33%;
+  height: 20px;
+  scale: 0.5;
+}
+.bottomwindow .weakness div{
+  display: grid;
 }
 
 .buttons {

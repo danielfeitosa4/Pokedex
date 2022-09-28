@@ -111,6 +111,7 @@ const data = await fetchPokemon(pokemon);
        const img = document.createElement("img")
         img.src="./images/typesImg/"+arr[i]+".svg"
         img.className = (arr[i])
+        img.classList.add("typeWeakness")
       const weakness=  document.getElementById(weaknessString)
       weakness.appendChild(img)
     }
@@ -127,7 +128,7 @@ const data = await fetchPokemon(pokemon);
   imgWeakness(imune)
   imgWeakness(strong025x) 
   imgWeakness(strong05x) 
-  imgWeakness(normal) 
+  imgWeakness(normal)
   imgWeakness(weak2x) 
   imgWeakness(weak4x) 
 
