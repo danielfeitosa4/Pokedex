@@ -34,7 +34,7 @@ const renderPokemon = async (pokemon) => {
   const imune = ["imune"]
   const strong025x = ["strong025x"]
   const strong05x = ["strong05x"]
-  const normal = ["normal"]
+  const normal1x = ["normal1x"]
   const weak2x = ["weak2x"]
   const weak4x = ["weak4x"]
 
@@ -42,13 +42,14 @@ const renderPokemon = async (pokemon) => {
   function typeConst(ConstType){
   const myNode = document.getElementById(ConstType);
   while (myNode.firstChild) {
-    myNode.replaceChildren();
+    myNode.removeChild(myNode.lastChild);
   }
 }
+
   typeConst(imune)
   typeConst(strong025x)
   typeConst(strong05x)
-  typeConst(normal)
+  typeConst(normal1x)
   typeConst(weak2x)
   typeConst(weak4x)
 
@@ -90,7 +91,7 @@ const data = await fetchPokemon(pokemon);
 			strong05x.push(pokemonData[0][i].slice(8,)) 
 		}
 		else if(pokemonData[searchPokemon][i] == "1"){
-			normal.push(pokemonData[0][i].slice(8,)) 
+			normal1x.push(pokemonData[0][i].slice(8,)) 
 		}
 		else if(pokemonData[searchPokemon][i] == "2"){
 			weak2x.push(pokemonData[0][i].slice(8,)) 
@@ -103,23 +104,30 @@ const data = await fetchPokemon(pokemon);
 	}
 ////////////////puts img files in html ///////////////
   function imgWeakness(arr){
-    const weaknessString = arr[0]
+    const weaknessString = document.getElementById(arr[0])
+    const weaknessClass = document.getElementById("span"+arr[0]);
     if (arr.length > 1 ){
+      weaknessClass.style.visibility = "visible";
+      weaknessClass.style.position = "static";
     for(let i=1; i<arr.length; i++){
-        document.getElementById(weaknessString).style.visibility = "visible";
-        document.getElementById(weaknessString).style.position = "static";
+      weaknessString.style.visibility = "visible";
+      weaknessString.style.position = "static";
        const img = document.createElement("img")
         img.src="./images/typesImg/"+arr[i]+".svg"
         img.className = (arr[i])
         img.classList.add("typeWeakness")
-      const weakness=  document.getElementById(weaknessString)
+      const weakness=  weaknessString
       weakness.appendChild(img)
+  
     }
      
     }
     else{
-      document.getElementById(weaknessString).style.visibility = "hidden";
-      document.getElementById(weaknessString).style.position = "absolute";
+      weaknessClass.style.visibility = "hidden";
+      weaknessClass.style.position = "absolute";
+      weaknessString.style.visibility = "hidden";
+      weaknessString.style.position = "absolute";
+
 
     }
   }
@@ -128,7 +136,7 @@ const data = await fetchPokemon(pokemon);
   imgWeakness(imune)
   imgWeakness(strong025x) 
   imgWeakness(strong05x) 
-  imgWeakness(normal)
+  imgWeakness(normal1x)
   imgWeakness(weak2x) 
   imgWeakness(weak4x) 
 

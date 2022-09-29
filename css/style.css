@@ -10,7 +10,8 @@
 body {
   text-align: center;
   background: linear-gradient(to bottom, #6ab7f5, #fff);
-  min-height: 100vh;
+  height: 160rem;
+  
 }
 
 main{
@@ -26,13 +27,12 @@ main .topwindow {
 }
 
 main .bottomwindow{
-  display: flexbox;
   position: relative;
-  height: ;
   margin-top: 2%;
-  padding: 15px;
+  padding: 0;
   margin-top: 0;
   padding-top: 0;
+  height: 800px;
 }
 
 .pokedex {
@@ -41,26 +41,53 @@ main .bottomwindow{
   display: block;
 }
 .pokedex2 {
-  display: block;
+  right: 0;
+  left: 0;
+  position: absolute;
+  display: inline;
   width: 100%;
-  /* max-width: 425px; */
+  max-width: 455px;
   border-radius: 30px;
-  /* position: ; */
  
 }
-h1{
-  position: absolute;
-}
 .weakness{
+  top: 130px;
   position: relative;
-  display: block;
-  height: 10px;
+  height: fit-content;
 }
 
-.weakness img{
-  position: absolute;
-  height: 100px;
+.weakness span{
+display: block;
+text-align: left;
+margin-left: 3rem;
+font-size: 1.1rem;
 }
+
+.weakness div{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  margin: 0 auto;
+  line-height: 0;
+  background-color: rgba(174, 86, 241, 0.297);
+  width: 300px;
+  margin-bottom: 10px;
+  text-align: left;
+  height: fit-content;
+}
+
+.typeWeakness{
+  display: inline-block;
+  max-width:18%;
+  max-height:100%;
+  width: auto;
+  height: auto;
+  border-radius: 100%;
+  scale: 0.9;
+}
+
+
 
 .pokemon__image {
   position: absolute;
@@ -117,15 +144,6 @@ h1{
   
 }
 
-.typeWeakness{
-  display: inline-block;
-  width: 33%;
-  height: 20px;
-  scale: 0.5;
-}
-.bottomwindow .weakness div{
-  display: grid;
-}
 
 .buttons {
   position: absolute;
