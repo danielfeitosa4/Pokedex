@@ -10,7 +10,7 @@
 body {
   text-align: center;
   background: linear-gradient(to bottom, #6ab7f5, #fff);
-  height: 160rem;
+  height: fit-content;
   
 }
 
