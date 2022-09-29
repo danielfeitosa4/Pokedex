@@ -105,30 +105,15 @@ const data = await fetchPokemon(pokemon);
 ////////////////puts img files in html ///////////////
   function imgWeakness(arr){
     const weaknessString = document.getElementById(arr[0])
-    const weaknessClass = document.getElementById("span"+arr[0]);
     if (arr.length > 1 ){
-      weaknessClass.style.visibility = "visible";
-      weaknessClass.style.position = "static";
     for(let i=1; i<arr.length; i++){
-      weaknessString.style.visibility = "visible";
-      weaknessString.style.position = "static";
        const img = document.createElement("img")
         img.src="./images/typesImg/"+arr[i]+".svg"
         img.className = (arr[i])
         img.classList.add("typeWeakness")
       const weakness=  weaknessString
       weakness.appendChild(img)
-  
     }
-     
-    }
-    else{
-      weaknessClass.style.visibility = "hidden";
-      weaknessClass.style.position = "absolute";
-      weaknessString.style.visibility = "hidden";
-      weaknessString.style.position = "absolute";
-
-
     }
   }
   console.log(pokemonData[searchPokemon][2])

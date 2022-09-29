@@ -51,7 +51,7 @@ main .bottomwindow{
  
 }
 .weakness{
-  top: 130px;
+  top: 140px;
   position: relative;
   height: fit-content;
 }
@@ -71,6 +71,7 @@ font-size: 1.1rem;
   margin: 0 auto;
   line-height: 0;
   background-color: rgba(174, 86, 241, 0.297);
+  min-height: 40px;
   width: 300px;
   margin-bottom: 10px;
   text-align: left;
