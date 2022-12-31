@@ -10,20 +10,85 @@
 body {
   text-align: center;
   background: linear-gradient(to bottom, #6ab7f5, #fff);
-  min-height: 100vh;
+  height: fit-content;
+  
 }
 
-main {
+main{
   display: inline-block;
+  
+}
+
+main .topwindow {
+  
   margin-top: 2%;
   padding: 15px;
   position: relative;
 }
 
+main .bottomwindow{
+  position: relative;
+  margin-top: 2%;
+  padding: 0;
+  margin-top: 0;
+  padding-top: 0;
+  height: 800px;
+}
+
 .pokedex {
   width: 100%;
   max-width: 425px;
+  display: block;
 }
+.pokedex2 {
+  right: 0;
+  left: 0;
+  position: absolute;
+  display: inline;
+  width: 100%;
+  max-width: 455px;
+  border-radius: 30px;
+ 
+}
+.weakness{
+  top: 140px;
+  position: relative;
+  height: fit-content;
+}
+
+.weakness span{
+display: block;
+text-align: left;
+margin-left: 3rem;
+font-size: 1.1rem;
+}
+
+.weakness div{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  margin: 0 auto;
+  line-height: 0;
+  background-color: rgba(174, 86, 241, 0.297);
+  min-height: 40px;
+  width: 300px;
+  margin-bottom: 10px;
+  text-align: left;
+  height: fit-content;
+}
+
+.typeWeakness{
+  display: inline-block;
+  max-width:18%;
+  max-height:100%;
+  width: auto;
+  height: auto;
+  border-radius: 100%;
+  scale: 0.9;
+}
+
+
 
 .pokemon__image {
   position: absolute;
@@ -65,6 +130,21 @@ main {
   font-size: clamp(8px, 5vw, 1rem);
   box-shadow: -3px 4px 0 #888, -5px 7px 0 #333
 }
+.types {
+  gap: 30px;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate(-67%, -110%);
+  display: flex;
+}
+
+.type {
+  height: 130%;
+  padding: 4%;
+  
+}
+
 
 .buttons {
   position: absolute;
@@ -91,4 +171,118 @@ main {
 .button:active {
   box-shadow: inset -4px 4px 0 #222;
   font-size: 0.9rem;
+}
+
+
+
+
+/* COLORS FOR TYPES */
+
+
+.icon1 img {
+  height: 60%;
+  width: 60%;
+  margin: 20%;
+  scale: 1.8;
+}
+.icon2 img {
+  height: 60%;
+  width: 60%;
+  margin: 20%;
+  scale: 1.8;
+}
+.types div{
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  padding: .4rem
+}
+.bug {
+  background: #92BC2C;
+  box-shadow: 0 0 20px #92BC2C;
+}
+
+.dark {
+  background: #595761;
+  box-shadow: 0 0 20px #595761;
+}
+
+.dragon {
+  background: #0C69C8;
+  box-shadow: 0 0 20px #0C69C8;
+}
+
+.electric {
+  background: #F2D94E;
+  box-shadow: 0 0 20px #F2D94E;
+}
+
+.fire {
+  background: #FBA54C;
+  box-shadow: 0 0 20px #FBA54C;
+}
+
+.fairy {
+  background: #EE90E6;
+  box-shadow: 0 0 20px #EE90E6;
+}
+
+.fighting {
+  background: #D3425F;
+  box-shadow: 0 0 20px #D3425F;
+}
+
+.flying {
+  background: #A1BBEC;
+  box-shadow: 0 0 20px #A1BBEC;
+}
+
+.ghost {
+  background: #5F6DBC;
+  box-shadow: 0 0 20px #5F6DBC;
+}
+
+.grass {
+  background: #5FBD58;
+  box-shadow: 0 0 20px #5FBD58;
+}
+
+.ground {
+  background: #DA7C4D;
+  box-shadow: 0 0 20px #DA7C4D;
+}
+
+.ice {
+  background: #75D0C1;
+  box-shadow: 0 0 20px #75D0C1;
+}
+
+.normal {
+  background: #A0A29F;
+  box-shadow: 0 0 20px #A0A29F;
+}
+
+.poison {
+  background: #B763CF;
+  box-shadow: 0 0 20px #B763CF;
+}
+
+.psychic {
+  background: #FA8581;
+  box-shadow: 0 0 20px #FA8581;
+}
+
+.rock {
+  background: #C9BB8A;
+  box-shadow: 0 0 20px #C9BB8A;
+}
+
+.steel {
+  background: #5695A3;
+  box-shadow: 0 0 20px #5695A3;
+}
+
+.water {
+  background: #539DDF;
+  box-shadow: 0 0 20px #539DDF;
 }

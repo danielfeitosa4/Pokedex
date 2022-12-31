@@ -4,42 +4,72 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
-  <!-- Links -->
-  <link rel="icon" href="./favicons/pokebola.png">
-  <link rel="stylesheet" href="css/style.css">
-
+  
   <!-- Main JS-->
   <script defer src="./js/script.js"></script>
+  <script src="./teste.js"></script>
+  <script src="./js/pokeParse.js"></script>
+  
+   <!-- Links -->
+   <link rel="icon" href="./favicons/pokebola.png">
+   <link rel="stylesheet" href="css/style.css">
 
   <title>Pokédex</title>
 </head>
 <body>
   
   <main>
-    <img src="#" alt="pokemon" class="pokemon__image">
+    <div class="topwindow">
 
-    <h1 class="pokemon__data">
-      <span class="pokemon__number"></span> -
-      <span class="pokemon__name"></span>
-    </h1>
-
-    <form class="form">
-      <input 
+      <img src="#" alt="pokemon" class="pokemon__image">
+      
+      <h1 class="pokemon__data">
+        <span class="pokemon__number"></span> -
+        <span class="pokemon__name"></span>
+      </h1>
+      
+      <form class="form">
+        <input 
       type="search"
       class="input__search"
       placeholder="Name or Number"
       required
       />
     </form>
-
+    
+    <div class="types">
+      <div class="icon1">
+        <img class="type type1">
+      </div>
+      <div class="icon2">
+        <img class="type type2">
+      </div>
+    </div>
     <div class="buttons">
-      <button class="button btn-prev">Prev &lt;</button>
+      <button class="button btn-prev">&lt; Prev</button>
       <button class="button btn-next">Next &gt;</button>
     </div>
-
     <img src="./images/pokedex.png" class="pokedex" alt="pokedex">
-  </main>
-
+  </div>
+  <div class="bottomwindow">
+    <img src="./images/pokedex2.png" class="pokedex2" alt="">
+    <div class="weakness grid" id="weakness">
+      <span id="spanimune">Imune</span>
+      <div class="imune" id="imune"></div>
+      <span id="spanstrong025x">Resists (0.25x)</span>
+      <div class="strong025x" id="strong025x"></div>
+      <span id="spanstrong05x">Resists (0.5x)</span>
+      <div class="strong05x" id="strong05x"></div>
+      <span id="spannormal1x">Normal Damage (1x)</span>
+      <div class="normal1x" id="normal1x"></div>
+      <span id="spanweak2x">Weak (2x)</span>
+      <div class="weak2x" id="weak2x"></div>
+      <span id="spanweak4x">Weak (4x)</span>
+      <div class="weak4x" id="weak4x"></div>
+    </div>
+  </div>
+  
+  
+</main>
 </body>
 </html>
